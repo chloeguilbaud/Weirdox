@@ -1,4 +1,4 @@
-package com.moustick.weirdox.ui.dashboard;
+package com.moustick.weirdox.ui.sounds;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.moustick.weirdox.R;
 
-public class DashboardFragment extends Fragment {
+public class SoundsFragment extends Fragment {
 
-    private DashboardViewModel dashboardViewModel;
+    private SoundsViewModel soundsViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        dashboardViewModel =
-                ViewModelProviders.of(this).get(DashboardViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
-        final TextView textView = root.findViewById(R.id.text_dashboard);
-        dashboardViewModel.getText().observe(this, new Observer<String>() {
+        soundsViewModel =
+                ViewModelProviders.of(this).get(SoundsViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_sounds, container, false);
+        final TextView textView = root.findViewById(R.id.text_notifications);
+        soundsViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

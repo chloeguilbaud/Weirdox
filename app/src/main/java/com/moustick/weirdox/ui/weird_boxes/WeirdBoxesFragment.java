@@ -1,4 +1,4 @@
-package com.moustick.weirdox.ui.notifications;
+package com.moustick.weirdox.ui.weird_boxes;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.moustick.weirdox.R;
 
-public class NotificationsFragment extends Fragment {
+public class WeirdBoxesFragment extends Fragment {
 
-    private NotificationsViewModel notificationsViewModel;
+    private WeirdBoxesViewModel weirdBoxesViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        notificationsViewModel =
-                ViewModelProviders.of(this).get(NotificationsViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_notifications, container, false);
-        final TextView textView = root.findViewById(R.id.text_notifications);
-        notificationsViewModel.getText().observe(this, new Observer<String>() {
+        weirdBoxesViewModel =
+                ViewModelProviders.of(this).get(WeirdBoxesViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_weird_boxes, container, false);
+        final TextView textView = root.findViewById(R.id.text_dashboard);
+        weirdBoxesViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

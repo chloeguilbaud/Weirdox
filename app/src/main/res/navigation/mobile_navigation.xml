@@ -3,23 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_favorites">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.moustick.weirdox.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/navigation_favorites"
+        android:name="com.moustick.weirdox.ui.favorites.FavoritesFragment"
+        android:label="@string/title_favorite"
+        tools:layout="@layout/fragment_favorites" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.moustick.weirdox.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_weird_boxes"
+        android:name="com.moustick.weirdox.ui.weird_boxes.WeirdBoxesFragment"
+        android:label="@string/title_weird_boxes"
+        tools:layout="@layout/fragment_weird_boxes" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.moustick.weirdox.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_sounds"
+        android:name="com.moustick.weirdox.ui.sounds.SoundsFragment"
+        android:label="@string/title_sounds"
+        tools:layout="@layout/fragment_sounds" />
 </navigation>

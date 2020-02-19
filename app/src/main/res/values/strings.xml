@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Weirdox</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_favorite">Favoris</string>
+    <string name="title_weird_boxes">Boîtes</string>
+    <string name="title_sounds">Sons</string>
 </resources>

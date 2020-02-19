@@ -1,4 +1,4 @@
-package com.moustick.weirdox.ui.home;
+package com.moustick.weirdox.ui.favorites;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.moustick.weirdox.R;
 
-public class HomeFragment extends Fragment {
+public class FavoritesFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
+    private FavoritesViewModel favoritesViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
+        favoritesViewModel =
+                ViewModelProviders.of(this).get(FavoritesViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_favorites, container, false);
         final TextView textView = root.findViewById(R.id.text_home);
-        homeViewModel.getText().observe(this, new Observer<String>() {
+        favoritesViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
