@@ -1,19 +1,6 @@
 package com.moustick.weirdox;
 
 import android.os.Bundle;
-import android.renderscript.Short3;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.moustick.weirdox.database.Sound;
-import com.moustick.weirdox.database.SoundDAO;
-import com.moustick.weirdox.database.Weirdo;
-import com.moustick.weirdox.database.WeirdoDAO;
-import com.moustick.weirdox.database.WeirdosViewModel;
-import com.moustick.weirdox.database.WeirdoxDatabase;
-import com.moustick.weirdox.db.roomtest.Director;
-import com.moustick.weirdox.db.roomtest.DirectorDao;
-import com.moustick.weirdox.db.roomtest.DirectorsViewModel;
-import com.moustick.weirdox.db.roomtest.MoviesDatabase;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
@@ -22,6 +9,14 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.moustick.weirdox.database.Sound;
+import com.moustick.weirdox.database.SoundDAO;
+import com.moustick.weirdox.database.Weirdo;
+import com.moustick.weirdox.database.WeirdoDAO;
+import com.moustick.weirdox.database.WeirdosViewModel;
+import com.moustick.weirdox.database.WeirdoxDatabase;
 
 import java.util.List;
 
@@ -50,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         DBHelper.closeDataBase();*/
 
-        DirectorDao directorDao = MoviesDatabase.getDatabase(getApplication()).directorDao();
+        /* directorDao = MoviesDatabase.getDatabase(getApplication()).directorDao();
         LiveData<List<Director>> directorsLiveData = directorDao.getAllDirectors();
         directorDao.insert(new Director("coucou folder"));
         System.out.println("Test " + directorsLiveData);
@@ -62,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                     System.out.println("TEST + " + director);
                 }
             }
-        });
+        });*/
 
 
         SoundDAO soundDAO = WeirdoxDatabase.getDatabase(getApplication()).soundDAO();
@@ -71,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
         Weirdo weirdoOne = new Weirdo("Cindytest", "avatar_cindytest");
         soundDAO.insert(new Sound("coucou sound", "un audio", (int) weirdoDAO.insert(weirdoOne)));
-        System.out.println("Test " + directorsLiveData);
+        System.out.println("Test " + soundsLiveData);
 
         WeirdosViewModel weirdosViewModel = new WeirdosViewModel(getApplication());
         soundsLiveData.observe(this, new Observer<List<Sound>>() {

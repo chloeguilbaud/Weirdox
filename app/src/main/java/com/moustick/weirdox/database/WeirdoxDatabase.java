@@ -10,11 +10,6 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-import com.moustick.weirdox.db.roomtest.Director;
-import com.moustick.weirdox.db.roomtest.DirectorDao;
-import com.moustick.weirdox.db.roomtest.Movie;
-import com.moustick.weirdox.db.roomtest.MovieDao;
-
 @Database(entities = {Favorite.class, Sound.class, Weirdo.class}, version = 1)
 public abstract class WeirdoxDatabase extends RoomDatabase {
 
