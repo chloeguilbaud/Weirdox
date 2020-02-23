@@ -1,40 +1,39 @@
 package com.moustick.weirdox.database;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "weirdo")
+@Entity(tableName = "weirdo",
+        indices = {@Index(value = "name", unique = true)})
 public class Weirdo {
 
-    @PrimaryKey
-    public int uid;
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "wid")
+    public int id;
 
     @ColumnInfo(name = "name")
+    @NonNull
     public String name;
 
     @ColumnInfo(name = "avatar")
+    @NonNull
     public String avatar;
 
-    /*public Weirdo(String name, String avatar) {
+    public Weirdo(@NonNull String name, @NonNull String avatar) {
         this.name = name;
         this.avatar = avatar;
     }
 
-    public String getName() {
-        return name;
+    @Override
+    public String toString() {
+        return "Weirdo{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", avatar='" + avatar + '\'' +
+                '}';
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAvatar() {
-        return avatar;
-    }
-
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
-    }
-*/
 }

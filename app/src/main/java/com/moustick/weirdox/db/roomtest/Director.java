@@ -18,6 +18,7 @@ public class Director {
     public String fullName;
     @Ignore
     public int age;
+
     public Director(@NonNull String fullName) {
         this.fullName = fullName;
     }

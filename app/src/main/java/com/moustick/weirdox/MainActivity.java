@@ -1,10 +1,15 @@
 package com.moustick.weirdox;
 
 import android.os.Bundle;
+import android.renderscript.Short3;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.moustick.weirdox.db.DBHelper;
-import com.moustick.weirdox.db.room.AppDatabase;
+import com.moustick.weirdox.database.Sound;
+import com.moustick.weirdox.database.SoundDAO;
+import com.moustick.weirdox.database.Weirdo;
+import com.moustick.weirdox.database.WeirdoDAO;
+import com.moustick.weirdox.database.WeirdosViewModel;
+import com.moustick.weirdox.database.WeirdoxDatabase;
 import com.moustick.weirdox.db.roomtest.Director;
 import com.moustick.weirdox.db.roomtest.DirectorDao;
 import com.moustick.weirdox.db.roomtest.DirectorsViewModel;
@@ -17,7 +22,6 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-import androidx.room.Room;
 
 import java.util.List;
 
@@ -56,6 +60,25 @@ public class MainActivity extends AppCompatActivity {
             public void onChanged(List<Director> directors) {
                 for (Director director : directors) {
                     System.out.println("TEST + " + director);
+                }
+            }
+        });
+
+
+        SoundDAO soundDAO = WeirdoxDatabase.getDatabase(getApplication()).soundDAO();
+        WeirdoDAO weirdoDAO = WeirdoxDatabase.getDatabase(getApplication()).weirdoDAO();
+        LiveData<List<Sound>> soundsLiveData = soundDAO.getAll();
+
+        Weirdo weirdoOne = new Weirdo("Cindytest", "avatar_cindytest");
+        soundDAO.insert(new Sound("coucou sound", "un audio", (int) weirdoDAO.insert(weirdoOne)));
+        System.out.println("Test " + directorsLiveData);
+
+        WeirdosViewModel weirdosViewModel = new WeirdosViewModel(getApplication());
+        soundsLiveData.observe(this, new Observer<List<Sound>>() {
+            @Override
+            public void onChanged(List<Sound> sounds) {
+                for (Sound sound : sounds) {
+                    System.out.println("TEST + " + sound);
                 }
             }
         });
