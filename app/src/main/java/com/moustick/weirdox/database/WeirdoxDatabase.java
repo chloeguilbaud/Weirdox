@@ -79,18 +79,6 @@ public abstract class WeirdoxDatabase extends RoomDatabase {
 
             soundDao.insert(soundOne, soundTwo, soundThree, soundFour);
 
-
-            /*Director directorOne = new Director("Adam McKay");
-            Director directorTwo = new Director("Denis Villeneuve");
-            Director directorThree = new Director("Morten Tyldum");
-            Movie movieOne = new Movie("The Big Short", (int) soundDao.insert(directorOne));
-            final int dIdTwo = (int) soundDao.insert(directorTwo);
-            Movie movieTwo = new Movie("Arrival", dIdTwo);
-            Movie movieThree = new Movie("Blade Runner 2049", dIdTwo);
-            Movie movieFour = new Movie("Passengers", (int) soundDao.insert(directorThree));
-            favoriteDao.insert(movieOne, movieTwo, movieThree, movieFour); */
-
-
             return null;
         }
     }

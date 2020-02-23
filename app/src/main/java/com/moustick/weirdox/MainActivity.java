@@ -36,30 +36,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
-
-
-        /*DBHelper.openDataBase(getApplicationContext());
-
-        AppDatabase db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, DBHelper.getDatabaseName()).build();
-        System.out.println(db.weirdoDAO().getAll());
-
-        DBHelper.closeDataBase();*/
-
-        /* directorDao = MoviesDatabase.getDatabase(getApplication()).directorDao();
-        LiveData<List<Director>> directorsLiveData = directorDao.getAllDirectors();
-        directorDao.insert(new Director("coucou folder"));
-        System.out.println("Test " + directorsLiveData);
-        DirectorsViewModel directorsViewModel = new DirectorsViewModel(getApplication());
-        directorsLiveData.observe(this, new Observer<List<Director>>() {
-            @Override
-            public void onChanged(List<Director> directors) {
-                for (Director director : directors) {
-                    System.out.println("TEST + " + director);
-                }
-            }
-        });*/
-
-
+        // Database testing
         SoundDAO soundDAO = WeirdoxDatabase.getDatabase(getApplication()).soundDAO();
         WeirdoDAO weirdoDAO = WeirdoxDatabase.getDatabase(getApplication()).weirdoDAO();
         LiveData<List<Sound>> soundsLiveData = soundDAO.getAll();
