@@ -26,4 +26,12 @@ public class Weirdo {
         this.avatar = avatar;
     }
 
+    @Override
+    public String toString() {
+        return "Weirdo{" +
+                "name='" + name + '\'' +
+                ", avatar='" + avatar + '\'' +
+                '}';
+    }
+
 }
