@@ -11,24 +11,24 @@ import java.util.List;
 public class WeirdosViewModel extends AndroidViewModel {
 
     private WeirdoDAO weirdoDAO;
-    private LiveData<List<Weirdo>> directorsLiveData;
+    private LiveData<List<Weirdo>> weirdosLiveData;
 
     public WeirdosViewModel(@NonNull Application application) {
         super(application);
         weirdoDAO = WeirdoxDatabase.getDatabase(application).weirdoDAO();
-        directorsLiveData = weirdoDAO.getAll();
+        weirdosLiveData = weirdoDAO.getAll();
     }
 
-    public LiveData<List<Weirdo>> getDirectorList() {
-        return directorsLiveData;
+    public LiveData<List<Weirdo>> getWeirdoList() {
+        return weirdosLiveData;
     }
 
-    public void insert(Weirdo... directors) {
-        weirdoDAO.insert(directors);
+    public void insert(Weirdo... weirdos) {
+        weirdoDAO.insert(weirdos);
     }
 
-    public void update(Weirdo director) {
-        weirdoDAO.update(director);
+    public void update(Weirdo weirdo) {
+        weirdoDAO.update(weirdo);
     }
 
     public void deleteAll() {
