@@ -56,5 +56,9 @@ public class WeirdosListAdapter extends ArrayAdapter<Weirdo> {
         return vue;
     }
 
+    public void setWeirdoList(List<Weirdo> weirdos) {
+
+    }
+
 
 }
